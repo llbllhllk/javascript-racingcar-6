@@ -7,6 +7,11 @@ class RacingGameController {
 
   async #inputCarNames() {
     const carNames = await InputView.readCarNames();
+    return this.#inputTrialNumber();
+  }
+
+  async #inputTrialNumber() {
+    const trialNumber = await InputView.readTrialNumber();
   }
 }
 

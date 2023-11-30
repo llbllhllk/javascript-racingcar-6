@@ -7,6 +7,12 @@ const InputView = {
 
     return carNames;
   },
+
+  async readTrialNumber() {
+    const trialNumber = await Console.readLineAsync(MESSAGE.read.trialNumber);
+
+    return trialNumber;
+  },
 };
 
 export default InputView;
