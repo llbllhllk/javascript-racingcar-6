@@ -4,7 +4,7 @@ const read = Object.freeze({
 });
 
 const print = Object.freeze({
-  result: '실행 결과',
+  result: '\n실행 결과',
 });
 
 const MESSAGE = Object.freeze({
