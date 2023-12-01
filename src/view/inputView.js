@@ -1,11 +1,16 @@
 import { Console } from '@woowacourse/mission-utils';
 import MESSAGE from '../constants/message.js';
+import CarNamesValidator from '../validators/CarNamesValidator.js';
 
 const InputView = {
   async readCarNames() {
     const carNames = await Console.readLineAsync(MESSAGE.read.carNames);
+    CarNamesValidator.validateCarNames(carNames);
 
-    return carNames;
+    return carNames
+      .split(',')
+      .map(car => car.trim())
+      .filter(Boolean);
   },
 
   async readTrialNumber() {
