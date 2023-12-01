@@ -3,8 +3,13 @@ const read = Object.freeze({
   trialNumber: '시도할 횟수는 몇 회인가요?\n',
 });
 
+const print = Object.freeze({
+  result: '실행 결과',
+});
+
 const MESSAGE = Object.freeze({
   read,
+  print,
 });
 
 export default MESSAGE;
