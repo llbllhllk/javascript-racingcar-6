@@ -1,6 +1,7 @@
 import { Console } from '@woowacourse/mission-utils';
 import MESSAGE from '../constants/message.js';
 import CarNamesValidator from '../validators/CarNamesValidator.js';
+import TrialNumberValidator from '../validators/TrialNumberValidator.js';
 
 const InputView = {
   async readCarNames() {
@@ -15,8 +16,9 @@ const InputView = {
 
   async readTrialNumber() {
     const trialNumber = await Console.readLineAsync(MESSAGE.read.trialNumber);
+    TrialNumberValidator.validateTrialNumber(trialNumber);
 
-    return trialNumber;
+    return Number(trialNumber);
   },
 };
 

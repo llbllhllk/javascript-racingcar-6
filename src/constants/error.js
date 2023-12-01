@@ -5,8 +5,15 @@ const carNames = Object.freeze({
   separator: '[ERROR] 쉼표 구분을 잘못하였습니다.',
 });
 
+const trialNumber = Object.freeze({
+  empty: '[ERROR] 시도 횟수를 입력해주세요.',
+  notANumber: '[ERROR] 숫자를 입력해주세요.',
+  negative: '[ERROR] 음수가 아닌 숫자를 입력해주세요.',
+});
+
 const ERROR = Object.freeze({
   carNames,
+  trialNumber,
 });
 
 export default ERROR;
