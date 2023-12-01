@@ -1,7 +1,7 @@
 import ERROR from '../../src/constants/error.js';
 import CarNamesValidator from '../../src/validators/CarNamesValidator.js';
 
-describe('숫자 입력 예외 상황 테스트', () => {
+describe('경주할 자동차의 이름 예외 상황 테스트', () => {
   const cases = [
     {
       input: '',

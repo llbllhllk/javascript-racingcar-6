@@ -1,7 +1,7 @@
 import ERROR from '../../src/constants/error.js';
 import TrialNumberValidator from '../../src/validators/TrialNumberValidator.js';
 
-describe('숫자 입력 예외 상황 테스트', () => {
+describe('시도 횟수 입력 예외 상황 테스트', () => {
   const cases = [
     {
       input: '',
@@ -20,7 +20,7 @@ describe('숫자 입력 예외 상황 테스트', () => {
     },
   ];
 
-  test.each(cases)('사용자 $input을 통해 에러를 반환한다.', ({ input, expected }) => {
+  test.each(cases)('사용자 시도 횟수 $input을 통해 에러를 반환한다.', ({ input, expected }) => {
     // when
     const result = () => TrialNumberValidator.validateTrialNumber(input);
 
