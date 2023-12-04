@@ -1,12 +1,12 @@
 import CONSTANTS from '../constants/constants.js';
 
 class Car {
-  #carName;
+  #name;
 
   #position;
 
   constructor(carName) {
-    this.#carName = carName;
+    this.#name = carName;
     this.#position = [];
   }
 
@@ -15,7 +15,15 @@ class Car {
   }
 
   status() {
-    return `${this.#carName} : ${this.#position.join('')}`;
+    return `${this.#name} : ${this.#position.join(CONSTANTS.string.empty)}`;
+  }
+
+  findWinner(max) {
+    if (this.#hasPositionGreaterThanMax(max)) return this.#name;
+  }
+
+  #hasPositionGreaterThanMax(max) {
+    return this.#position.length >= max;
   }
 
   #shouldCarMove(randomNumber) {

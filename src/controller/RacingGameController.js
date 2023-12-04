@@ -27,6 +27,12 @@ class RacingGameController {
       const carStatus = this.#racingGameService.moveCar();
       OutputView.printRacingResultString(carStatus);
     });
+
+    return this.#printWinners();
+  }
+
+  #printWinners() {
+    this.#racingGameService.findWinners();
   }
 }
 

@@ -19,6 +19,9 @@ const range = Object.freeze({
 const car = Object.freeze({
   moveCondition: 4,
   move: '-',
+  carNameIndex: 0,
+  carPositionIndex: 1,
+  carStatusSeparator: ' : ',
 });
 
 const CONSTANTS = Object.freeze({

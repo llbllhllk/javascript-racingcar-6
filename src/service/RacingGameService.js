@@ -1,3 +1,4 @@
+import CONSTANTS from '../constants/constants.js';
 import Car from '../domain/Car.js';
 import generateRandomNumber from '../utils/generateRandomNumber.js';
 
@@ -18,6 +19,19 @@ class RacingGameService {
       car.move(randomNumber);
       return car.status();
     });
+  }
+
+  findWinners() {
+    const max = this.#calculateMaxPositionLength();
+    return this.#cars.map(car => car.findWinner(max)).filter(Boolean);
+  }
+
+  #calculateMaxPositionLength() {
+    return Math.max(...this.#carsStatus().map(car => car[CONSTANTS.car.carPositionIndex].length));
+  }
+
+  #carsStatus() {
+    return this.#cars.map(car => car.status().split(CONSTANTS.car.carStatusSeparator));
   }
 }
 
