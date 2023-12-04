@@ -1,3 +1,4 @@
+import CONSTANTS from '../constants/constants.js';
 import RacingGameService from '../service/RacingGameService.js';
 import OutputView from '../view/OutputView.js';
 import InputView from '../view/inputView.js';
@@ -28,11 +29,12 @@ class RacingGameController {
       OutputView.printRacingResultString(carStatus);
     });
 
-    return this.#printWinners();
+    return this.#printWinnersResult();
   }
 
-  #printWinners() {
-    this.#racingGameService.findWinners();
+  #printWinnersResult() {
+    const winners = this.#racingGameService.findWinners().join(CONSTANTS.winners.separator);
+    OutputView.printWinners(winners);
   }
 }
 

@@ -10,6 +10,10 @@ const OutputView = {
     carStatus.forEach(car => Console.print(car));
     Console.print('');
   },
+
+  printWinners(winners) {
+    Console.print(`최종 우승자 : ${winners}`);
+  },
 };
 
 export default OutputView;

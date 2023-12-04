@@ -24,12 +24,17 @@ const car = Object.freeze({
   carStatusSeparator: ' : ',
 });
 
+const winners = Object.freeze({
+  separator: ', ',
+});
+
 const CONSTANTS = Object.freeze({
   number,
   string,
   carNames,
   range,
   car,
+  winners,
 });
 
 export default CONSTANTS;
