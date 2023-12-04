@@ -26,7 +26,7 @@ describe('Car 클래스 테스트', () => {
     const cases = [
       { carName: 'a', randomNumber: 4, max: 1, expected: 'a' },
       { carName: 'b', randomNumber: 6, max: 0, expected: 'b' },
-      { carName: 'c', randomNumber: 1, max: 3, expected: undefined },
+      { carName: 'c', randomNumber: 1, max: 3, expected: null },
     ];
 
     test.each(cases)(
