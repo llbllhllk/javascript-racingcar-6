@@ -17,13 +17,18 @@ class RacingGameService {
     return this.#cars.map(car => {
       const randomNumber = generateRandomNumber();
       car.move(randomNumber);
+
       return car.status();
     });
   }
 
   findWinners() {
     const max = this.#calculateMaxPositionLength();
-    return this.#cars.map(car => car.findWinner(max)).filter(Boolean);
+
+    return this.#cars
+      .map(car => car.findWinner(max))
+      .filter(Boolean)
+      .join(CONSTANTS.winners.separator);
   }
 
   #calculateMaxPositionLength() {

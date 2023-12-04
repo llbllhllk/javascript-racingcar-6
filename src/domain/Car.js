@@ -20,6 +20,8 @@ class Car {
 
   findWinner(max) {
     if (this.#hasPositionGreaterThanMax(max)) return this.#name;
+
+    return null;
   }
 
   #hasPositionGreaterThanMax(max) {

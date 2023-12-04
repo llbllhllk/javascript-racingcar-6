@@ -1,4 +1,3 @@
-import CONSTANTS from '../constants/constants.js';
 import RacingGameService from '../service/RacingGameService.js';
 import OutputView from '../view/OutputView.js';
 import InputView from '../view/inputView.js';
@@ -10,8 +9,8 @@ class RacingGameController {
     this.#racingGameService = new RacingGameService();
   }
 
-  async startGame() {
-    return await this.#inputInfo();
+  startGame() {
+    return this.#inputInfo();
   }
 
   async #inputInfo() {
@@ -26,14 +25,15 @@ class RacingGameController {
     OutputView.printResultHeaderString();
     Array.from({ length: trialNumber }, () => {
       const carStatus = this.#racingGameService.moveCar();
-      OutputView.printRacingResultString(carStatus);
+
+      return OutputView.printRacingResultString(carStatus);
     });
 
     return this.#printWinnersResult();
   }
 
   #printWinnersResult() {
-    const winners = this.#racingGameService.findWinners().join(CONSTANTS.winners.separator);
+    const winners = this.#racingGameService.findWinners();
     OutputView.printWinners(winners);
   }
 }

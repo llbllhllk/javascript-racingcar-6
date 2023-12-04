@@ -1,5 +1,6 @@
 import { Console } from '@woowacourse/mission-utils';
 import MESSAGE from '../constants/message.js';
+import CONSTANTS from '../constants/constants.js';
 
 const OutputView = {
   printResultHeaderString() {
@@ -8,7 +9,7 @@ const OutputView = {
 
   printRacingResultString(carStatus) {
     carStatus.forEach(car => Console.print(car));
-    Console.print('');
+    Console.print(CONSTANTS.string.empty);
   },
 
   printWinners(winners) {
